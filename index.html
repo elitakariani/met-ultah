@@ -2,55 +2,74 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <title>HBD Sayang</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>HBD Sayang</title>
 </head>
 
 <body>
-    <div class="card">
-        <div class="imgBox">
-            <div class="bark"></div>
-            <img src="us.png" alt="kita">
-        </div>
-        <div class="details">
-            <h4 class="color1">Untuk Kamu yang Spesial</h4>
-            <h4 class="color2">(HAPPY BIRTHDAY)</h4>
-            <p>Di hari ulang tahunmu ini,</p>
-            <p> Aku gak bawa kado mahal, Tapi aku bawa doa...</p>
-            
-            <p>Supaya kamu sehat terus, rejekinya lancar,</p>
-	    <p>dan cintanya gak pindah ke siapa-siapa.</p>
-            <p>Kamu itu kayak kopi susu pagi-pagi,</p>
-            <p>manis, bikin semangat, tapi bikin candu juga.</p>
-            <p>Tetaplah jadi kamu, yang bikin aku kangen tiap hari <3 </p>
-
-            <p>Terima kasih sudah hadir dalam hidupku. </p>
-	    <p>Jangan berubah ya, apalagi ganti aku... bisa berabe</p>
-            <p class="text-right">Congrats Repeat Year, Sayangku!</p>
-            <p class="text-right">Elita <3 </p>
-        </div>
-        </div>
+  <div class="card" onclick="startMusic()">
+    <div class="imgBox">
+      <div class="bark"></div>
+      <img src="us.png" alt="kita">
     </div>
-	<audio id="lagu" autoplay>
-  <source src="laguku.mp3" type="audio/mpeg">
-  Browser kamu tidak mendukung audio.
-</audio>
+    <div class="details">
+      <h4 class="color1">Untuk Kamu yang Spesial</h4>
+      <h4 class="color2">(HAPPY BIRTHDAY)</h4>
+      <p>Di hari ulang tahunmu ini,</p>
+      <p> Aku gak bawa kado mahal, Tapi aku bawa doa...</p>
+      <p>Supaya kamu sehat terus, rejekinya lancar,</p>
+      <p>dan cintanya gak pindah ke siapa-siapa.</p>
+      <p>Kamu itu kayak kopi susu pagi-pagi,</p>
+      <p>manis, bikin semangat, tapi bikin candu juga.</p>
+      <p>Tetaplah jadi kamu, yang bikin aku kangen tiap hari <3 </p>
+      <p>Terima kasih sudah hadir dalam hidupku. </p>
+      <p>Jangan berubah ya, apalagi ganti aku... bisa berabe</p>
+      <p class="text-right">Congrats Repeat Year, Sayangku!</p>
+      <p class="text-right">Elita <3 </p>
+    </div>
+  </div>
 
-<div>
-  <button onclick="document.getElementById('lagu').play()">Play</button>
-  <button onclick="document.getElementById('lagu').pause()">Pause</button>
-  <button onclick="document.getElementById('lagu').currentTime=0; document.getElementById('lagu').pause()">Stop</button>
-</div>
+  <!-- AUDIO -->
+  <audio id="lagu" autoplay muted>
+    <source src="laguku.mp3" type="audio/mpeg">
+    Browser kamu tidak mendukung audio.
+  </audio>
 
-    <script src="script.js"></script>
-	
+  <!-- KONTROL -->
+  <div style="text-align: center; margin-top: 20px;">
+    <button onclick="playAudio()">▶️ Play</button>
+    <button onclick="pauseAudio()">⏸️ Pause</button>
+    <button onclick="stopAudio()">⏹️ Stop</button>
+  </div>
+
+  <script>
+    const audio = document.getElementById("lagu");
+
+    // Fungsi dijalankan ketika user klik kartu pertama kali
+    function startMusic() {
+      audio.muted = false;
+      audio.play();
+    }
+
+    function playAudio() {
+      audio.muted = false;
+      audio.play();
+    }
+
+    function pauseAudio() {
+      audio.pause();
+    }
+
+    function stopAudio() {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+  </script>
+
 </body>
-
-
 </html>
-
