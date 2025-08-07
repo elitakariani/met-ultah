@@ -21,9 +21,8 @@
             <h4 class="color1">Untuk Kamu yang Spesial</h4>
             <h4 class="color2">(HAPPY BIRTHDAY)</h4>
             <p>Di hari ulang tahunmu ini,</p>
-            <p> Aku gak bawa kado mahal, apalagi boneka besar...</p>
-            <p>Tapi aku bawa doa,</p>
-	    
+            <p> Aku gak bawa kado mahal, Tapi aku bawa doa...</p>
+            
             <p>Supaya kamu sehat terus, rejekinya lancar,</p>
 	    <p>dan cintanya gak pindah ke siapa-siapa.</p>
             <p>Kamu itu kayak kopi susu pagi-pagi,</p>
@@ -37,8 +36,21 @@
         </div>
         </div>
     </div>
+	<audio id="lagu" autoplay>
+  <source src="laguku.mp3" type="audio/mpeg">
+  Browser kamu tidak mendukung audio.
+</audio>
+
+<div>
+  <button onclick="document.getElementById('lagu').play()">Play</button>
+  <button onclick="document.getElementById('lagu').pause()">Pause</button>
+  <button onclick="document.getElementById('lagu').currentTime=0; document.getElementById('lagu').pause()">Stop</button>
+</div>
+
     <script src="script.js"></script>
+	
 </body>
 
 
 </html>
+
